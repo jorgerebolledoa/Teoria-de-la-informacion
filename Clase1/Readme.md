@@ -80,4 +80,3 @@ La probabilidad marginal de un evento es la probabilidad de que ocurra ese event
 
 La probabilidad condicional de un evento \( A \) dado que ha ocurrido otro evento \( B \) es la probabilidad de que ocurra \( A \) bajo la condición de que \( B \) ha ocurrido. Se denota por \( P(A|B) \).
 
-## Instalación
