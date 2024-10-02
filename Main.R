@@ -1,0 +1,7 @@
+Datos<-read.csv("past-rounded.csv", header = TRUE, sep = ",")
+#Datos2 <-read.csv("M-rounded.csv", header = TRUE, sep = ",")
+#plot(Datos$L,Datos[,"S"], main= "L vs s", xlab="L", ylab="s", pch=19, col="blue")
+#plot(Datos2$L,Datos2[,"M"], main= "L vs M", xlab="L", ylab="M", pch=19, col="red")
+#plot(Datos[,c("O","R")], xlab="L", ylab="s", pch=19, col="blue")
+#print(substring(Datos$date[1],1,4))
+plot(Datos[as.integer(substring(Datos$date,1,4))==2015 &as.integer(substring(Datos$date,5,6))==6 , "M"])
