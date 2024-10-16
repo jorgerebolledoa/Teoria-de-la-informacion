@@ -14,3 +14,21 @@ for(i in 1:length(U)){
 
 # Graficar los valores únicos 'U' en el eje x y sus frecuencias 'P' en el eje y, con una escala logarítmica en el eje x
 plot(U, P, log = "x")
+
+# Normalizar las frecuencias dividiendo cada frecuencia por la suma total de frecuencias
+P <- P / sum(P)
+
+# Calcular la entropía de Shannon utilizando las frecuencias normalizadas
+H <- -sum(P * log2(P))
+
+# Imprimir el valor de la entropía
+print(H)
+f<-c()
+for (i in 1:length(P)) {
+    f[i]<-print(sqrt(abs((P[i]^2) - ((1/581)^ 2))))
+}
+print(f)
+
+plot(P,c(1:360)*0 +(1/360))
+P<- log(P)
+plot(P, dnorm(U, mean(U), sd(U)), )
