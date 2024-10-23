@@ -1,0 +1,21 @@
+pxy <- matrix(data = c(1/8,1/16,1/32,1/32,1/16,1/8,1/32,1/32,1/16,1/16,1/16,1/16,1/4,0,0,0), nrow = 4, ncol = 4, byrow = TRUE)
+px <- apply(pxy,MARGIN = 1, FUN = sum )
+py <- apply(pxy,MARGIN = 2, FUN =sum )
+print(px)
+print(py)
+H<- function(x) {
+    x<-x[x>0]
+    return(-sum(x * log2(x)))
+} 
+print(H(px))
+print(H(py))
+print(H(pxy))
+print((1/2)*H(pxy[,1]))
+print((1/4)*H(pxy[,2]))
+print((1/8)*H(pxy[,3]))
+print((1/8)*H(pxy[,4]))
+probY_x<-(1/4)*(H(pxy[1,]/py[1])+ (1/4)*H(pxy[2,]/py[1])+ (1/4)*H(pxy[3,]/py[1])+ (1/4)*H(pxy[4,]/py[1]))
+probX_y<-(1/2)*H(pxy[,1]/py[1])+ (1/4)*H(pxy[,2]/py[1])+ (1/8)*H(pxy[,3]/py[1])+ (1/8)*H(pxy[,4]/py[1])
+print(probX_y)
+print("Probabilidad de Y dado X")
+print(probY_x)
