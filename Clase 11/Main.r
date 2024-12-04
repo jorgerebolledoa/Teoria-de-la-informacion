@@ -32,3 +32,13 @@ for (i in 1:length(y)) {
 }
 
 points(y, py, col = "red", pch = 20)
+
+dkl <- function(px, py) {
+    px <- px / sum(px)
+    py <- py / sum(py)
+    return(sum(px * log(px / py)))
+}
+print(dkl(px, py))
+print(dkl(py, px))
+
+
