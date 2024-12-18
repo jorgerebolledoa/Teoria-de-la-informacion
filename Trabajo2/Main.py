@@ -15,6 +15,8 @@ data_filtered = data[columns_of_interest].dropna().astype(int)
 def kullback_leibler(p, q):
     p = np.array(p, dtype=np.float64)
     q = np.array(q, dtype=np.float64)
+    p = np.clip(p, 1e-10, 1)
+    q = np.clip(q, 1e-10, 1)
     return entropy(p, q, base=2)  # Base 2 para bits
 
 # Función para calcular la desigualdad de Jensen (Jensen-Shannon divergence)
